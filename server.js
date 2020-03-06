@@ -11,7 +11,6 @@ const fs = require("fs");
 //Uses callback funtions (req, res) and renders html elements based on passing arguments. 
 const app = express();
 
-// var userNotes = require("db/db.js")
 const PORT = process.env.PORT || 8080;
 var dataNotes = [];
 
@@ -22,7 +21,7 @@ app.use(express.static("public"));
 
 app.use(logger("dev"));
 
-// API Routes - gets the file from index.js and reads the file with fs.readfile.
+// API Routes - gets the file from index.js and reads it with fs.readfile.
 app.get("/api/notes", function(req, res) {
   fs.readFile("db/db.json", "utf8", function(err, data) {
     //Concatenates dataNotes to the array.
